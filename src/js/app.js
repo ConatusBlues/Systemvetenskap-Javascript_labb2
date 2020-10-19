@@ -35,4 +35,57 @@ const news = [
  * Good luck :) 
  */
 
- console.log('js loaded!')
+document.getElementById('ex01').innerText = ('done')
+
+document.getElementsByClassName('ex02')[0].style.color = ('red')
+
+document.getElementsByTagName('blockquote')[0].innerText = ('testare som är festare')
+
+var node = document.createElement("LI");
+var textnode = document.createTextNode("Milk");
+node.appendChild(textnode);
+document.getElementById("shopping-list").appendChild(node);
+
+
+for (let index = 0; index < news.length; index++) {
+
+    const headline = document.createElement('h3')
+    headline.textContent = news[index].headline
+    headline.className = 'purple'
+
+    const author = document.createElement('p')
+    author.textContent = news[index].author
+
+    const link = document.createElement('a')
+    link.href = news[index].href
+    link.textContent = 'Suupercoola nyhetslänken'
+
+    const summary = document.createElement('p')
+    summary.textContent = news[index].summary
+
+    const currentDiv = document.querySelector('#news')
+    currentDiv.appendChild(headline)
+    currentDiv.appendChild(author)
+    currentDiv.appendChild(link)
+    currentDiv.appendChild(summary)
+
+}
+
+    const button = document.querySelector('button')
+    button.addEventListener('click', function(event) {
+    event = button.disabled = true
+    })
+
+    let clicks = 0;
+    document.addEventListener("click", function(){
+    clicks += 1;
+    document.getElementById('click-counter').innerHTML = clicks;
+    })
+
+    document.getElementById("link-to-svt").href = "#";
+
+    document.getElementsByTagName("img")[0].src = ("https://images.unsplash.com/photo-1602891382287-daa85a949cd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+console.log('js loaded!')
+
+
+
